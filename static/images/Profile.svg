@@ -1,0 +1,8 @@
+<svg width="350" height="350" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="175" cy="175" r="170" fill="#2563eb" />
+  <text x="175" y="160" font-family="Poppins, sans-serif" font-size="28" fill="white" 
+        text-anchor="middle" font-weight="600">区位保护区</text>
+  <text x="175" y="200" font-family="Poppins, sans-serif" font-size="28" fill="white" 
+        text-anchor="middle" font-weight="600">区位保护区</text>
+  <circle cx="175" cy="175" r="168" stroke="white" stroke-width="2" fill="none" />
+</svg>

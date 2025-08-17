@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sameer Bansal - AI/ML Engineer | Data Science Enthusiast. Professional portfolio showcasing machine learning projects and expertise.">
+    <meta name="keywords" content="Sameer Bansal, AI, ML, Machine Learning, Data Science, Python, Portfolio">
+    <meta name="author" content="Sameer Bansal">
+    <title>Sameer Bansal | AI/ML Engineer Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>Sameer Bansal</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        {{ message }}
+                        <button class="flash-close">&times;</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="{{ url_for('static', filename='images/profile.svg') }}" alt="Sameer Bansal Profile Picture" class="profile-img">
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Sameer Bansal</h1>
+                    <p class="hero-subtitle">AI/ML Engineer | Data Science Enthusiast</p>
+                    <p class="hero-description">
+                        Passionate about transforming data into actionable insights and building intelligent systems 
+                        that solve real-world problems. Currently driving innovation at AMD with cutting-edge machine learning solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Sameer Bansal is a Software Engineer with 2 years of experience. He graduated from BITS Pilani, 
+                        Goa Campus in 2024 with a B.E. in Engineering. Currently, he works as an ML Engineer at AMD, 
+                        with over 1 year and 3 months of experience. Skilled in Python, Data Science, and Machine Learning, 
+                        he has a strong grasp of both backend and AI/ML development.
+                    </p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-section">
+                        <h3>Education</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h4>B.E. Engineering</h4>
+                                <p>BITS Pilani, Goa Campus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-section">
+                        <h3>Experience</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023 - Present</div>
+                            <div class="timeline-content">
+                                <h4>ML Engineer</h4>
+                                <p>AMD (1 year 3 months)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages & Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">HTML</span>
+                        <span class="skill-item">CSS</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">Flask</span>
+                        <span class="skill-item">Django</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Libraries</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">Scikit-Learn</span>
+                        <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">Seaborn</span>
+                        <span class="skill-item">Keras</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">TensorFlow</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Replace the entire skills-grid section with this -->
+    <div class="skills-grid">
+        <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Languages & Tools</h3>
+            <div class="skill-items">
+                <span class="skill-item" title="Python"><i class="fab fa-python"></i></span>
+                <span class="skill-item" title="SQL"><i class="fas fa-database"></i></span>
+                <span class="skill-item" title="MongoDB"><i class="fas fa-leaf"></i></span>
+                <span class="skill-item" title="HTML"><i class="fab fa-html5"></i></span>
+                <span class="skill-item" title="CSS"><i class="fab fa-css3-alt"></i></span>
+                <span class="skill-item" title="JavaScript"><i class="fab fa-js"></i></span>
+                <span class="skill-item" title="C++"><i class="fas fa-file-code"></i></span>
+                <span class="skill-item" title="Flask"><i class="fas fa-flask"></i></span>
+                <span class="skill-item" title="Django"><i class="fab fa-python"></i></span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3><i class="fas fa-chart-line"></i> Libraries</h3>
+            <div class="skill-items">
+                <span class="skill-item" title="NumPy"><i class="fas fa-calculator"></i></span>
+                <span class="skill-item" title="Pandas"><i class="fas fa-table"></i></span>
+                <span class="skill-item" title="Scikit-Learn"><i class="fas fa-robot"></i></span>
+                <span class="skill-item" title="Matplotlib"><i class="fas fa-chart-line"></i></span>
+                <span class="skill-item" title="Seaborn"><i class="fas fa-chart-area"></i></span>
+                <span class="skill-item" title="Keras"><i class="fas fa-brain"></i></span>
+                <span class="skill-item" title="PyTorch"><i class="fas fa-fire"></i></span>
+                <span class="skill-item" title="TensorFlow"><i class="fas fa-project-diagram"></i></span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+            <div class="skill-items">
+                <span class="skill-item" title="Kubernetes"><i class="fab fa-docker"></i></span>
+                <span class="skill-item" title="Docker"><i class="fab fa-docker"></i></span>
+                <span class="skill-item" title="GitHub Actions"><i class="fab fa-github"></i></span>
+                <span class="skill-item" title="CI/CD"><i class="fas fa-sync-alt"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>Extracting meaningful insights from complex datasets to drive informed business decisions and strategic planning.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Exploratory Data Analysis (EDA)</h3>
+                    <p>Comprehensive automated and manual exploratory data analysis to understand data patterns, relationships, and anomalies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ML Modeling</h3>
+                    <p>Building, training, and deploying sophisticated predictive models to solve complex business problems and automate processes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-flag-checkered portfolio-icon"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>F1 Lap Prediction</h3>
+                        <p>Advanced machine learning model that predicts drivers' chances of winning based on comprehensive lap timing analysis and historical performance data.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                        <a href="https://github.com/Sameer475" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-money-bill-wave portfolio-icon"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Credit Risk for Loan Approvals</h3>
+                        <p>Sophisticated predictive model for financial institutions to assess loan default risk, improving decision-making and reducing financial losses.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Risk Assessment</span>
+                            <span class="tag">Financial Modeling</span>
+                        </div>
+                        <a href="https://github.com/Sameer475" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-tachometer-alt portfolio-icon"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Fully Automated EDA & ML Dashboard</h3>
+                        <p>Comprehensive end-to-end tool that automates exploratory data analysis and machine learning model development with an intuitive dashboard interface.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Automation</span>
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Full-Stack</span>
+                        </div>
+                        <a href="https://github.com/Sameer475" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Phone: [To be filled]</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email: [To be filled]</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Address: [To be filled]</span>
+                    </div>
+                </div>
+                <form class="contact-form" method="POST" action="{{ url_for('contact') }}">
+                    <h3>Send a Message</h3>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sameer Bansal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sameer-bansal/150501/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Sameer475" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                 <a href="https://x.com/SameerB10734" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
