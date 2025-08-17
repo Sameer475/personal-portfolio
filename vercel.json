@@ -31,8 +31,5 @@
       "src": "/(.*)",
       "dest": "/app.py"
     }
-  ],
-  "env": {
-    "SESSION_SECRET": "@session-secret"
-  }
+  ]
 }
