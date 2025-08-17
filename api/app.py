@@ -1,6 +1,8 @@
 import os
 import logging
 from flask import Flask, render_template, request, flash, jsonify, send_from_directory
+from dotenv import load_dotenv
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -8,6 +10,7 @@ logging.basicConfig(level=logging.DEBUG)
 # app = Flask(__name__, static_folder='static', static_url_path='/static')
 app = Flask(__name__, static_folder='../static', template_folder='../templates')
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
+print("SESSION_SECRET:", os.environ.get("SESSION_SECRET"))
 
 os.makedirs(os.path.join(app.root_path, 'static', 'css'), exist_ok=True)
 os.makedirs(os.path.join(app.root_path, 'static', 'images'), exist_ok=True)
