@@ -88,10 +88,10 @@ def vercel_handler(request):
         res = app.full_dispatch_request()
     return res
 
-if __name__ == '__main__':
-    print(f"📁 Static folder: {app.static_folder}")
-    print(f"🌐 Static URL path: {app.static_url_path}")
-    print(f"🚀 Server running on: http://0.0.0.0:5000")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+# if __name__ == '__main__':
+#     print(f"📁 Static folder: {app.static_folder}")
+#     print(f"🌐 Static URL path: {app.static_url_path}")
+#     print(f"🚀 Server running on: http://0.0.0.0:5000")
+#     app.run(host='0.0.0.0', port=5000, debug=True)
 
 
