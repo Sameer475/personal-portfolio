@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sameer-bansal-portfolio
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.9.16
