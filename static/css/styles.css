@@ -279,6 +279,7 @@ p {
   display: flex;
   gap: var(--spacing-lg);
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 @keyframes fadeInUp {
@@ -743,6 +744,12 @@ p {
     flex-direction: column;
     gap: var(--spacing-lg);
   }
+
+  .hero-buttons .btn {
+    margin-right: var(--spacing-sm);
+
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -822,6 +829,14 @@ p {
     flex-direction: column;
     gap: var(--spacing-sm);
   }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
 }
 
 /* Animation Classes */

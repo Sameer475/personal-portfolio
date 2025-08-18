@@ -287,6 +287,21 @@ class FlashMessageHandler {
     }
 }
 
+class DownloadHandler {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        document.querySelectorAll('a[download]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // You could add analytics or confirmation here
+                console.log('Downloading resume...');
+            });
+        });
+    }
+}
+
 // Contact Form Enhancement
 class ContactFormHandler {
     constructor() {
@@ -497,6 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new FlashMessageHandler();
     new ContactFormHandler();
     new NavbarScrollEffect();
+    new DownloadHandler();
     
     // Add typing animation with a delay to let the page settle
     setTimeout(() => {
