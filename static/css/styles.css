@@ -690,10 +690,19 @@ p {
     background-color: var(--surface-color);
     flex-direction: column;
     justify-content: start;
-    padding-top: var(--spacing-3xl);
+    padding: var(--spacing-3xl) var(--spacing-lg);
     transition: left var(--transition-normal);
     grid-column: 1 / -1;
     justify-self: stretch;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  .nav-link {
+    padding: var(--spacing-md) 0;
+    font-size: var(--font-size-lg);
+    text-align: center;
+    width: 100%;
+    display: block;
   }
   
   .nav-menu.active {
@@ -799,6 +808,15 @@ p {
 @media (max-width: 480px) {
   .hero {
     padding-top: 100px;
+  }
+
+  .nav-menu {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-sm) 0;
   }
   
   section {
